@@ -1,11 +1,21 @@
+# import sys
+# import os
+# sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+
+# import pytest
+# import numpy as np
+# from src.data_loader import load_iris_data
+# from src.model import IrisClassifier
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
 
+
 import pytest
 import numpy as np
-from src.data_loader import load_iris_data
-from src.model import IrisClassifier
+from data_loader import load_iris_data
+from model import IrisClassifier
+
 
 class TestIrisClassifier:
     def setup_method(self):
@@ -65,3 +75,6 @@ def test_data_loading():
     assert X_train.shape[1] == 4  # 4 features
     assert len(np.unique(y_train)) == 3  # 3 classes
     assert len(X_train) + len(X_test) == 150  # Total samples
+
+
+
