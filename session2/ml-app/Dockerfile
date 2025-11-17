@@ -1,21 +1,12 @@
-# Use official Python runtime as base image
-FROM python:3.9-slim
+FROM python:3.11-slim
 
-# Set the working directory inside the container
 WORKDIR /app
 
-# Copy requirements
 COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Install dependencies
-RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+COPY src/ ./src
 
-# Copy all application code to container
-COPY . .
+EXPOSE 5000  
 
-# Create models directory for storing trained models
-RUN mkdir -p models
-
-# Run Training
-CMD ["python", "src/train.py"]
+CMD ["python", "src/train.py"]  
