@@ -35,4 +35,4 @@
 - Purpose: To make the application portable and runnable on any machine with Docker.
 ![Building The Image Docker Output](screenshots/imageBuilding.png)
 ![Image Docker Output](screenshots/dockerImage.jpeg)
-![Image Running Output](screenshots/runImage.jpeg)
+![Image Running Output](screenshots/RunImage.jpeg)
